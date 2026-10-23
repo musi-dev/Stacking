@@ -1,0 +1,97 @@
+.mk-hero {
+    max-width: var(--max);
+    margin: 30px auto 0;
+    padding: 20px
+}
+
+.mk-hero p:not(.hm-kicker) {
+    color: var(--mute);
+    margin-top: .8rem
+}
+
+.cd-hero {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 36px;
+    align-items: center
+}
+
+.cd-hero h1 {
+    font-size: clamp(1.9rem, 4vw, 3rem)
+}
+
+.cd-hero strong {
+    display: block;
+    color: var(--accent);
+    margin-top: 1rem
+}
+
+.cd-hero>img {
+    height: 340px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--r)
+}
+
+.cd-btns {
+    display: flex;
+    gap: .6rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap
+}
+
+.mk-grid {
+    padding: 20px
+}
+
+.mk-detail {
+    max-width: var(--max);
+    margin: 30px auto 0;
+    padding: 0 20px
+}
+
+.mk-tabs {
+    display: inline-flex;
+    background: var(--card);
+    padding: 5px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    gap: 4px
+}
+
+.mk-tabs button {
+    border: 0;
+    background: none;
+    padding: .65rem 1.4rem;
+    border-radius: 10px;
+    font: 600 .9rem inherit;
+    font-family: inherit;
+    cursor: pointer;
+    color: var(--mute)
+}
+
+.mk-tabs button.on {
+    background: var(--dark);
+    color: #fff
+}
+
+@media (max-width:768px) {
+    .cd-hero {
+        grid-template-columns: 1fr
+    }
+}
+
+@media (max-width:520px) {
+    .cd-hero>img {
+        height: 240px
+    }
+
+    .mk-tabs {
+        display: flex
+    }
+
+    .mk-tabs button {
+        flex: 1;
+        padding: .65rem .5rem
+    }
+}

@@ -1,0 +1,164 @@
+.bw-coins {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: var(--max);
+    margin: auto
+}
+
+.bw-coin {
+    background: var(--card);
+    border-radius: var(--r);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column
+}
+
+.bw-coin img {
+    height: 190px;
+    width: 100%;
+    object-fit: cover
+}
+
+.bw-coin__body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    flex: 1;
+    align-items: flex-start
+}
+
+.bw-coin__body p {
+    color: var(--mute);
+    font-size: .93rem
+}
+
+.bw-coin__body strong {
+    color: var(--accent);
+    font-size: .95rem
+}
+
+.bw-coin__body .bw-btn {
+    margin-top: auto
+}
+
+.bw-forecast,
+.bw-plans,
+.bw-benefits {
+    background: var(--card);
+    border-radius: var(--r);
+    padding: 32px;
+    margin-bottom: 20px
+}
+
+.bw-forecast h2 {
+    margin-bottom: 1rem
+}
+
+.bw-forecast p {
+    color: var(--mute);
+    max-width: 72ch;
+    margin-bottom: .7rem
+}
+
+.bw-live {
+    color: var(--ink) !important
+}
+
+.bw-live b {
+    background: var(--dark);
+    color: #fff;
+    padding: .15rem .6rem;
+    border-radius: 8px
+}
+
+.bw-plans h3,
+.bw-benefits h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem
+}
+
+.bw-table__scroll {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 14px
+}
+
+.bw-table table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+    font-size: .92rem
+}
+
+.bw-table th {
+    background: var(--dark);
+    color: #fff;
+    text-align: left;
+    padding: .9rem 1rem;
+    font-weight: 600
+}
+
+.bw-table td {
+    padding: .85rem 1rem;
+    border-top: 1px solid var(--line)
+}
+
+.bw-table tbody tr:nth-child(even) {
+    background: var(--paper)
+}
+
+.bw-benefits li {
+    padding: .55rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: .95rem
+}
+
+.bw-note {
+    margin-top: 1rem;
+    font-size: .8rem;
+    color: var(--mute)
+}
+
+@media (max-width:1024px) {
+    .bw-coins {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media (max-width:768px) {
+
+    .bw-forecast,
+    .bw-plans,
+    .bw-benefits {
+        padding: 24px
+    }
+}
+
+@media (max-width:520px) {
+    .bw-coins {
+        grid-template-columns: 1fr
+    }
+
+    .bw-forecast,
+    .bw-plans,
+    .bw-benefits {
+        padding: 18px
+    }
+
+    .bw-table th,
+    .bw-table td {
+        padding: .7rem .75rem
+    }
+}
+
+@media (max-width:350px) {
+    .bw-coin__body {
+        padding: 16px
+    }
+
+    .bw-table table {
+        font-size: .82rem
+    }
+}

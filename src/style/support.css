@@ -1,0 +1,98 @@
+.sp-hero {
+    max-width: var(--max);
+    margin: 30px auto 0;
+    padding: 20px
+}
+
+.sp-body {
+    max-width: var(--max);
+    margin: 20px auto 0;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px;
+    align-items: start
+}
+
+.sp-faq {
+    background: var(--card);
+    border-radius: var(--r);
+    padding: 12px 28px
+}
+
+.sp-item {
+    border-bottom: 1px solid var(--line);
+    padding: 6px 0
+}
+
+.sp-item:last-child {
+    border: 0
+}
+
+.sp-item button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: 0;
+    padding: 1rem 0;
+    font: 600 1rem inherit;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+    color: var(--ink)
+}
+
+.sp-item p {
+    color: var(--mute);
+    padding-bottom: 1rem;
+    font-size: .93rem
+}
+
+.sp-contact {
+    background: var(--dark);
+    color: #e8e8ea;
+    border-radius: var(--r);
+    padding: 28px
+}
+
+.sp-contact h3 {
+    color: #fff;
+    margin-bottom: 1rem
+}
+
+.sp-contact p {
+    display: flex;
+    gap: .5rem;
+    margin-bottom: .6rem;
+    font-size: .92rem
+}
+
+@media (max-width:768px) {
+    .sp-body {
+        grid-template-columns: 1fr
+    }
+}
+
+@media (max-width:520px) {
+    .sp-faq {
+        padding: 8px 16px
+    }
+}
+
+.sp-lead {
+    color: var(--mute);
+    margin-top: 1rem;
+    max-width: 56ch
+}
+
+.sp-contact a {
+    text-decoration: underline
+}
+
+.sp-contact svg {
+    flex: none;
+    margin-top: .25rem
+}
