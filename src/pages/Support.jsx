@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FiPlus, FiMinus, FiMapPin, FiGlobe, FiMail, FiHeadphones } from "react-icons/fi";
 import Reveal from "../components/Reveal.jsx";
+import LottiePlayer from "../components/LottiePlayer.jsx";
+import questionAnim from "../lottie/Question.json";
 import { faqs, brand, features } from "../data/siteData.js";
 import "../style/support.css";
 
@@ -22,13 +24,20 @@ export default function Support() {
             </div>
           ))}
         </Reveal>
-        <Reveal className="sp-contact" delay={100}>
-          <h3>Contact BENWINK</h3>
-          <p><FiMapPin /> {brand.address}</p>
-          <p><FiGlobe /> {brand.website}</p>
-          <p><FiHeadphones /> Support through mail, 24/7.</p>
-          {brand.email && <p><FiMail /> <a href={`mailto:${brand.email}`}>{brand.email}</a></p>}
-        </Reveal>
+        <div className="sp-side">
+          <Reveal className="sp-contact" delay={100}>
+            <h3>BENWINK</h3>
+            <p><FiMapPin /> {brand.address}</p>
+            <p><FiGlobe /> {brand.website}</p>
+            <p><FiHeadphones /> Support through mail, 24/7.</p>
+            {brand.email && <p><FiMail /> <a href={`mailto:${brand.email}`}>{brand.email}</a></p>}
+          </Reveal>
+          {/* FAQ animation below the address details */}
+          <Reveal className="sp-anim" delay={160}>
+            <LottiePlayer data={questionAnim} label="Frequently asked questions animation" />
+            <p>Still have a question? Read the FAQs on the left or reach us by mail.</p>
+          </Reveal>
+        </div>
       </section>
     </>
   );

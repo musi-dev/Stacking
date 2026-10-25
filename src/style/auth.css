@@ -240,3 +240,19 @@
 .au__card h1 {
     font-size: clamp(1.8rem, 3vw, 2.4rem)
 }
+/* ---- login: animation + text on the left ---- */
+.au__side { align-items: flex-start; }
+.au__anim { width: 100%; max-width: 280px; margin: 0 auto .4rem; }
+.au__anim .bw-lottie { filter: drop-shadow(0 12px 30px rgba(0, 0, 0, .25)); }
+.au__badge {
+    display: inline-flex; align-items: center; gap: .4rem; font-size: .78rem; font-weight: 600;
+    background: rgba(255, 255, 255, .12); padding: .35rem .8rem; border-radius: 999px;
+}
+.au__badge svg { color: var(--accent); }
+.au__card { box-shadow: 0 18px 44px rgba(0, 0, 0, .07); justify-content: center; }
+@media (max-width: 900px) {
+    .au__anim { max-width: 180px; }
+}
+@media (max-width: 520px) {
+    .au__anim { max-width: 150px; }
+}

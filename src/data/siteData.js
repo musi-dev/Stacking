@@ -15,6 +15,9 @@ export const img = {
   btc: u("photo-1518546305927-5a555bb7020d"),
 };
 
+// Home hero background (people image under the headline)
+export const heroBg = "/assets/real1.png";
+
 export const brand = {
   name: "BENWINK",
   logo: "/assets/logo.png",
@@ -44,10 +47,10 @@ export const stats = [
 export const highlights = ["Secure Staking", "Competitive Rewards", "Transparent Process", "Global Community"];
 
 export const steps = [
-  { t: "Create an Account", d: "Register for an account on BENWINK." },
-  { t: "Choose Plan", d: "Select Solana, BNB or ZMAX and your preferred investment plan." },
-  { t: "Your Investment", d: "Make your investment according to the selected plan." },
-  { t: "Get your Profit", d: "Receive potential returns according to the plan's terms and conditions." },
+  { t: "Create an Account", d: "Register for an account on BENWINK.", img: "/assets/img1.jpg" },
+  { t: "Choose Plan", d: "Select Solana, BNB or ZMAX and your preferred investment plan.", img: "/assets/img5.jpg"  },
+  { t: "Your Investment", d: "Make your investment according to the selected plan.", img: "/assets/img6.jpg"  },
+  { t: "Get your Profit", d: "Receive potential returns according to the plan's terms and conditions.", img: "/assets/img7.jpg"  },
 ];
 
 export const features = [
@@ -91,10 +94,10 @@ export const howItWorks = {
   head: "How does it Work?",
   sub: "Join the world's leading crypto community leading the crypto revolution.",
   items: [
-    { t: "Register", d: "Register on BENWINK in a few easy steps." },
-    { t: "Stake", d: "Choose a crypto for any time of your choosing to start earning rewards." },
-    { t: "Rewards", d: "The best rewards and opportunities make additional returns." },
-    { t: "Recognition", d: "Be a prominent figure and an influencer within the community." },
+    { t: "Register", d: "Register on BENWINK in a few easy steps.", img: "/assets/img1.jpg" },
+    { t: "Stake", d: "Choose a crypto for any time of your choosing to start earning rewards.", img: u("photo-1642104704074-907c0698cbd9", 700) },
+    { t: "Rewards", d: "The best rewards and opportunities make additional returns.", img: "/assets/img3.jpg" },
+    { t: "Recognition", d: "Be a prominent figure and an influencer within the community.", img: "/assets/img4.jpg" },
   ],
 };
 
@@ -110,7 +113,7 @@ export const involved = {
 export const why = [
   { t: "Secure & Reliable", d: "Secure and safe investments are made in BENWINK, with advanced security measures to protect your assets.", img: "/assets/pic1.jpg" },
   { t: "Transparent Rewards", d: "Real-time data and on-chain verification.", img: "/assets/pic2.png" },
-  { t: "Boundless Earning Scopes", d: "Invite as many people as you wish. The more people create accounts, the more payouts you receive.", img: "/assets/pic3.jpg" },
+  { t: "Boundless Earning Scopes", d: "Invite as many people as you wish. The more people create accounts, the more payouts you receive.", img: "/assets/s5.png" },
   { t: "Resolute Support", d: "Our resolute support is accomplished to help you on your path to success. Support extends through mail 24/7.", img: "/assets/pic4.jpg" },
   { t: "Explore Innovative", d: "A complete analysis and innovative intelligence to help you accomplish your goals faster and easier with unique technology.", img: img.chart },
   { t: "Easy Management", d: "Simple and user-friendly platform for everyone.", img: img.team },
@@ -127,30 +130,101 @@ const caveat = "Predictions vary from one platform and analyst to another, so tr
 
 export const coins = [
   {
-    id: "sol", name: "Solana", symbol: "SOL", apy: "7.5%", img: "/assets/s1.jpg",
+    id: "sol", kind: "crypto", name: "Solana", symbol: "SOL", apy: "7.5%", img: "/assets/s1.jpg",
     intro: "High-performance blockchain with great rewards.",
     days: "A fast proof-of-stake network known for low fees and quick confirmations.",
     forecastTitle: "SOL Coin Price Prediction 2030",
     forecast: [caveat, "According to Changelly, SOL's average trading price could reach about $100 by 2030, with the platform suggesting a high of $2000."],
     plans: buildPlans([100, 200, 300, 500, 1000], "SOL USDT", "USDT"),
+    stats: [{ l: "APY up to", v: "7.5%" }, { l: "2030 average", v: "~$100" }, { l: "2030 high", v: "$2000" }],
+    points: [
+      { t: "Fast network", d: "A proof-of-stake chain known for low fees and quick confirmations." },
+      { t: "Staking rewards", d: "Stake SOL on BENWINK with APY up to 7.5% and a clear 24-month plan table." },
+      { t: "Price outlook", d: "Changelly sees an average of about $100 by 2030, with a suggested high of $2000." },
+      { t: "Read it as an estimate", d: "Predictions vary from one platform and analyst to another. They are not a promise." },
+    ],
   },
   {
-    id: "bnb", name: "BNB", symbol: "BNB", apy: "6.8%", img: "/assets/s4.jpg",
+    id: "bnb", kind: "crypto", name: "BNB", symbol: "BNB", apy: "6.8%", img: "/assets/bnb.jpg",
     intro: "Stake BNB and earn consistent rewards.",
     days: "The native asset of the BNB Chain ecosystem, used for fees, trading and staking.",
     forecastTitle: "BNB Coin Price Prediction 2030",
     forecast: [caveat, "According to Changelly, BNB's average trading price could reach about $700 by 2030, with the platform suggesting a high of $5000."],
     plans: buildPlans([100, 200, 300, 500, 1000], "BNB USDT", "USDT"),
+    stats: [{ l: "APY up to", v: "6.8%" }, { l: "2030 average", v: "~$700" }, { l: "2030 high", v: "$5000" }],
+    points: [
+      { t: "Ecosystem asset", d: "The native asset of the BNB Chain, used for fees, trading and staking." },
+      { t: "Staking rewards", d: "Stake BNB on BENWINK with APY up to 6.8% and a clear 24-month plan table." },
+      { t: "Price outlook", d: "Changelly sees an average of about $700 by 2030, with a suggested high of $5000." },
+      { t: "Read it as an estimate", d: "Predictions vary from one platform and analyst to another. They are not a promise." },
+    ],
   },
   {
-    id: "zmax", name: "ZMAX", symbol: "ZMAX", apy: "12.0%", img: "/assets/s3.jpg",
+    id: "zmax", kind: "crypto", name: "ZMAX", symbol: "ZMAX", apy: "12.0%", img: "/assets/s3.png",
     intro: "Our native token with exclusive benefits.",
     days: "The ZOHOMAX ecosystem token with member-only staking benefits.",
     live: "0.010600",
     forecastTitle: "ZOHOMAX Coin Price Prediction 2030",
     forecast: [caveat, "According to Changelly, ZOHOMAX's average trading price could reach about $0.5 USDT by 2030, with the platform suggesting a high of $1.5."],
     plans: buildPlans([10000, 20000, 30000, 50000, 100000], "ZMAX COIN", "COIN"),
+    stats: [{ l: "Live price", v: "0.010600" }, { l: "2030 average", v: "~$0.5" }, { l: "2030 high", v: "$1.5" }],
+    points: [
+      { t: "Our native token", d: "The ZOHOMAX ecosystem token with member-only staking benefits." },
+      { t: "Staking rewards", d: "Stake ZMAX on BENWINK with APY up to 12.0% and a clear 24-month plan table." },
+      { t: "Price outlook", d: "Changelly sees an average of about $0.5 USDT by 2030, with a suggested high of $1.5." },
+      { t: "Read it as an estimate", d: "Predictions vary from one platform and analyst to another. They are not a promise." },
+    ],
   },
+];
+
+// ---- Extra market tabs shown after ZMAX (information only, not stakeable) ----
+export const metals = [
+  {
+    id: "gold", kind: "metal", name: "Gold", symbol: "Gold",
+    img: u("photo-1610375461246-83df859d849d", 1000),
+    intro: "The classic store of value.",
+    forecastTitle: "About Gold",
+    stats: [{ l: "Symbol", v: "XAU" }, { l: "Type", v: "Precious metal" }, { l: "Known for", v: "Store of value" }],
+    points: [
+      { t: "A long-trusted store of value", d: "Gold has been held for centuries as a way to keep wealth safe over time." },
+      { t: "Held by central banks", d: "Many central banks keep gold in their reserves alongside currencies." },
+      { t: "Often used to balance risk", d: "Investors commonly hold some gold to spread risk away from stocks and crypto." },
+      { t: "Jewellery and technology", d: "Besides investment, gold is used widely in jewellery and electronics." },
+    ],
+  },
+  {
+    id: "silver", kind: "metal", name: "Silver", symbol: "Silver",
+    img: "/assets/silver.jpg",
+    intro: "Precious metal with real industrial demand.",
+    forecastTitle: "About Silver",
+    stats: [{ l: "Symbol", v: "XAG" }, { l: "Type", v: "Precious metal" }, { l: "Known for", v: "Industrial use" }],
+    points: [
+      { t: "Two roles in one", d: "Silver is both an investment metal and a working industrial material." },
+      { t: "Used in clean energy", d: "It is a key material in solar panels, batteries and electronics." },
+      { t: "More affordable per ounce", d: "A lower price per ounce than gold makes it easier to start with small amounts." },
+      { t: "Prices can swing more", d: "Silver is usually more volatile than gold, so its price can move sharply." },
+    ],
+  },
+  {
+    id: "platinum", kind: "metal", name: "Platinum", symbol: "Platinum",
+    img: "/assets/plat.jpg",
+    intro: "A rarer metal behind modern industry.",
+    forecastTitle: "About Platinum",
+    stats: [{ l: "Symbol", v: "XPT" }, { l: "Type", v: "Precious metal" }, { l: "Known for", v: "Rarity" }],
+    points: [
+      { t: "Rarer than gold", d: "Platinum is mined in much smaller quantities, which adds to its value." },
+      { t: "Cleaner vehicles", d: "Most of the demand comes from catalytic converters that cut vehicle emissions." },
+      { t: "Hydrogen and fuel cells", d: "It is also used in fuel cells and other clean energy technology." },
+      { t: "Concentrated supply", d: "A small number of countries produce most platinum, which can affect its price." },
+    ],
+  },
+];
+
+export const team = [
+  { name: "Team Member 1", role: "Founder", note: "Vision and platform strategy", img: "/assets/1.jpeg" },
+  { name: "Team Member 2", role: "Head of Staking", note: "Plans, assets and rewards", img: "/assets/2.jpeg" },
+  { name: "Team Member 3", role: "Technology Lead", note: "Security and platform build", img: "/assets/3.jpeg" },
+  { name: "Team Member 4", role: "Community Manager", note: "Support and referral program", img: "/assets/4.jpeg" },
 ];
 
 export const posts = [

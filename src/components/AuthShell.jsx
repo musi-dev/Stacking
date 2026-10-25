@@ -1,12 +1,19 @@
-import { FiCheckCircle } from "react-icons/fi";
+import { FiCheckCircle, FiLock } from "react-icons/fi";
+import LottiePlayer from "./LottiePlayer.jsx";
 import { brand, highlights } from "../data/siteData.js";
 import "../style/auth.css";
 
-export default function AuthShell({ title, subtitle, children, footer }) {
+// `anim` (optional): a Lottie JSON shown at the top of the left panel (used on Login).
+export default function AuthShell({ title, subtitle, children, footer, anim, eyebrow }) {
   return (
     <section className="au">
       <aside className="au__side">
-        {/* <span className="au__logo"><img src={brand.logo} alt={brand.name} /></span> */}
+        {anim && (
+          <div className="au__anim">
+            <LottiePlayer data={anim} label="Secure login animation" />
+          </div>
+        )}
+        {eyebrow && <span className="au__badge"><FiLock /> {eyebrow}</span>}
         <h2>Stake Smarter. <em>Grow Your Crypto.</em></h2>
         <p>Stake Solana, BNB and ZMAX with {brand.name} in a secure, transparent and user-friendly platform.</p>
         <ul>

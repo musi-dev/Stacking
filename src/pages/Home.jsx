@@ -6,8 +6,10 @@ import CoinCard from "../components/CoinCard.jsx";
 import LottiePlayer from "../components/LottiePlayer.jsx";
 import cryptoAnim from "../lottie/crypto.json";
 import loanAnim from "../lottie/Loan Green.json";
+import shareAnim from "../lottie/share with friends.json";
+import questionAnim from "../lottie/Question.json";
 import {
-  img, stats, highlights, steps, why, coins, features, whatIs, community,
+  img, heroBg, stats, highlights, steps, why, coins, features, whatIs, community,
   referral, benefits, businessFormat, faqs,
 } from "../data/siteData.js";
 import "../style/coin.css";
@@ -33,26 +35,28 @@ export default function Home() {
 
   return (
     <>
-      {/* HERO */}
-      <section className="hm-hero">
-        <div className="hm-hero__card">
-          <p className="hm-kicker">Crypto staking platform</p>
-          <div className="hm-hero__top">
+      {/* HERO: full-page image behind the headline */}
+      <section className="hm-banner" style={{ backgroundImage: `url(${heroBg})` }}>
+        <div className="hm-banner__shade" aria-hidden="true" />
+        <div className="hm-banner__wrap">
+          <div className="hm-banner__in">
+            <p className="hm-banner__kicker"><FiBarChart2 /> Crypto staking platform</p>
             <h1>
-              Stake Smarter.
-              <span><img src={img.coins} alt="" />Grow Your Crypto.</span>
+              <span>STAKE</span>
+              <span className="hm-banner__2">SMARTER</span>
             </h1>
-            <div className="hm-hero__side">
-              <div className="hm-hero__btns">
-                <Link to="/register" className="bw-btn bw-btn--dark">Start Staking</Link>
-                <Link to="/markets" className="bw-btn bw-btn--ghost">Explore Markets</Link>
-              </div>
-              <p>Stake Solana, BNB and ZMAX with BENWINK and unlock rewarding opportunities in a secure, transparent and user-friendly platform.</p>
+           
+            <div className="hm-banner__btns">
+              <Link to="/register" className="bw-btn hm-banner__go">Start Staking <FiArrowRight /></Link>
+              <Link to="/markets" className="bw-btn hm-banner__line">Explore Markets</Link>
             </div>
           </div>
-          <div className="hm-hero__img">
-            <img src="/assets/bg.png" alt="Crypto staking" />
-            <ul>{highlights.map((h) => <li key={h}><FiCheckCircle /> {h}</li>)}</ul>
+          <div className="hm-banner__foot">
+            <div className="hm-banner__stat">
+              <b>{stats[0].v}</b>
+              <span>{stats[0].l}</span>
+            </div>
+            <ul className="hm-banner__chips">{highlights.map((h) => <li key={h}><FiCheckCircle /> {h}</li>)}</ul>
           </div>
         </div>
       </section>
@@ -107,7 +111,7 @@ export default function Home() {
           <Link to="/about" className="bw-btn bw-btn--dark">About BENWINK <FiArrowRight /></Link>
         </div>
         <div className="hm-split__media">
-          <img src="/assets/about.png" alt="BENWINK team" loading="lazy" />
+          <img src="/assets/ab1.jpg" alt="BENWINK team" loading="lazy" />
           <div className="hm-split__badge"><b>3</b><span>assets, one platform</span></div>
         </div>
       </Reveal>
@@ -210,7 +214,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* REFERRAL */}
+      {/* REFERRAL: text left, share animation right */}
       <Reveal as="section" className="hm-ref">
         <div className="hm-ref__main">
           <p className="hm-kicker">{referral.head}</p>
@@ -220,27 +224,32 @@ export default function Home() {
           ))}
           <Link to="/register" className="bw-btn bw-btn--dark">Register &amp; Refer <FiArrowRight /></Link>
         </div>
-        <ul className="hm-ref__list">
-          {benefits.slice(0, 3).map((b) => <li key={b}><FiCheckCircle /> {b}</li>)}
-        </ul>
+        <div className="hm-ref__anim">
+          <span className="hm-intro__glow" aria-hidden="true" />
+          <LottiePlayer data={shareAnim} label="Share with friends animation" />
+        </div>
       </Reveal>
 
-      {/* STEPS */}
-      <Reveal as="section" className="hm-steps hm-steps--four">
-        <div className="hm-steps__head">
-          <p>Your Investments</p>
+      {/* STEPS: dark + orange timeline, same palette as the footer */}
+      <Reveal as="section" className="hm-tl">
+        <div className="hm-tl__head">
+          <p className="hm-tl__kicker">Your Investments</p>
           <h2>Get started in <em>a few minutes.</em></h2>
-          <Link to="/register" className="bw-btn hm-steps__btn">Create account <FiArrowRight /></Link>
+          <p>Four simple steps from sign-up to your first plan.</p>
+          <Link to="/register" className="bw-btn hm-tl__btn">Create account <FiArrowRight /></Link>
         </div>
-        <div className="hm-steps__grid">
+        <ol className="hm-tl__list">
           {steps.map((s, i) => (
-            <div key={s.t} className="hm-step">
-              <span className="hm-step__no">{i + 1}</span>
-              <h3>{s.t}</h3>
-              <p>{s.d}</p>
-            </div>
+            <li key={s.t} className={`hm-tl__item hm-tl__item--${i + 1}`}>
+              <span className="hm-tl__pic"><img src={s.img} alt="" loading="lazy" /></span>
+              <span className="hm-tl__badge"><small>STEP</small>{String(i + 1).padStart(2, "0")}</span>
+              <div className="hm-tl__txt">
+                <h3>{s.t}</h3>
+                <p>{s.d}</p>
+              </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </Reveal>
 
       {/* FAQ */}
@@ -250,6 +259,9 @@ export default function Home() {
           <h2>Quick answers <em>before you start.</em></h2>
           <p>Can't find what you need? Our team replies by mail, 24/7.</p>
           <Link to="/support" className="bw-btn bw-btn--ghost">Contact support <FiArrowRight /></Link>
+          <div className="hm-faq__anim">
+            <LottiePlayer data={questionAnim} label="Frequently asked questions animation" />
+          </div>
         </Reveal>
         <Reveal className="hm-faq__list" delay={100}>
           {faqs.slice(0, 5).map((f, i) => (

@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { FiUser, FiUsers, FiMail, FiLock, FiPhone, FiHash } from "react-icons/fi";
 import AuthShell from "../components/AuthShell.jsx";
 import AuthField from "../components/AuthField.jsx";
+import loginAnim from "../lottie/Login.json";
 
 export default function Register() {
   const [params] = useSearchParams();
@@ -45,7 +46,7 @@ export default function Register() {
   }
 
   return (
-    <AuthShell title="Create your account" subtitle="Register to start staking SOL, BNB or ZMAX."
+    <AuthShell anim={loginAnim} eyebrow="Secure sign-up" title="Create your account" subtitle="Register to start staking SOL, BNB or ZMAX."
       footer={<>Already registered? <Link to="/login">Login</Link></>}>
       <form className="au__form" onSubmit={submit} noValidate>
         <div className="au__row">

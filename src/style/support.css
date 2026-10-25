@@ -96,3 +96,10 @@
     flex: none;
     margin-top: .25rem
 }
+/* ---- right column: address card + FAQ animation ---- */
+.sp-side { display: grid; gap: 20px; }
+.sp-anim {
+    background: var(--card); border-radius: var(--r); padding: 20px 20px 24px; text-align: center;
+}
+.sp-anim .bw-lottie { max-width: 300px; margin: 0 auto; }
+.sp-anim p { color: var(--mute); font-size: .9rem; margin-top: .4rem; }

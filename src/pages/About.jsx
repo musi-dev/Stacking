@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
-import { FiCheckCircle } from "react-icons/fi";
+import { FiCheckCircle, FiUserPlus, FiLayers, FiGift, FiAward, FiArrowRight } from "react-icons/fi";
 import Reveal from "../components/Reveal.jsx";
-import { img, stats, why, brand, trust, involved, howItWorks, whatIs } from "../data/siteData.js";
+import SafeImg from "../components/SafeImg.jsx";
+import { img, stats, why, brand, trust, involved, howItWorks, whatIs, team } from "../data/siteData.js";
 import "../style/home.css";
 import "../style/about.css";
+
+const howIcons = [<FiUserPlus />, <FiLayers />, <FiGift />, <FiAward />];
 
 export default function About() {
   return (
@@ -14,7 +17,7 @@ export default function About() {
           <h1>Staking, explained <em>before you commit.</em></h1>
           <p>BENWINK helps people stake Solana, BNB and ZMAX on one platform, with every plan laid out in a table you can read in a minute.</p>
         </Reveal>
-        <img src={img.dash} alt="Dashboard" />
+        <img src="/assets/real1.png" alt="Dashboard" />+
       </section>
       <Reveal as="section" className="ab-stats">
         {stats.map((s) => <div key={s.l}><b>{s.v}</b><span>{s.l}</span></div>)}
@@ -28,6 +31,27 @@ export default function About() {
           <p>{brand.address}</p>
         </div>
       </Reveal>
+      {/* TEAM: right after "Who we are" */}
+      <section className="ab-team">
+        <Reveal className="ab-team__head">
+          <p className="hm-kicker">Our team</p>
+          <h2>The people behind <em>BENWINK</em></h2>
+        </Reveal>
+        <div className="ab-team__grid">
+          {team.map((m, i) => (
+            <Reveal key={m.img} className="ab-person" delay={i * 90}>
+              <div className="ab-person__pic">
+                <SafeImg src={m.img} alt={m.name} loading="lazy" />
+                <div className="ab-person__tag">
+                  <b>{m.role}</b>
+                  <span>{m.note}</span>
+                </div>
+              </div>
+              <h3>{m.name}</h3>
+            </Reveal>
+          ))}
+        </div>
+      </section>
       <Reveal as="section" className="ab-stats">
         {trust.map((s) => <div key={s.t}><b>{s.t}</b><span>{s.d}</span></div>)}
       </Reveal>
@@ -53,14 +77,22 @@ export default function About() {
       </section>
       <section className="ab-how">
         <Reveal><h2>{howItWorks.head}</h2><p className="ab-sub">{howItWorks.sub}</p></Reveal>
-        <div>
+        <ol className="ab-how__grid ab-pg" >
           {howItWorks.items.map((w, i) => (
-            <Reveal key={w.t} className="ab-why__item" delay={i * 80}>
-              <small>{String(i + 1).padStart(2, "0")}</small>
-              <h3>{w.t}</h3><p>{w.d}</p>
+            <Reveal as="li" key={w.t} className="ab-step" delay={i * 90}>
+              <div className="ab-step__pic">
+                <SafeImg src={w.img} alt={w.t} loading="lazy" />
+                <span className="ab-step__no">{String(i + 1).padStart(2, "0")}</span>
+                <span className="ab-step__ic">{howIcons[i]}</span>
+              </div>
+              <div className="ab-step__txt">
+                <h3>{w.t}</h3>
+                <p>{w.d}</p> 
+              </div>
+              {/* {i < howItWorks.items.length - 1 && <FiArrowRight className="ab-step__arrow" aria-hidden="true" />} */}
             </Reveal>
           ))}
-        </div>
+        </ol>
       </section>
       <Reveal as="section" className="hm-cta">
         <h2>Join BENWINK today</h2>
