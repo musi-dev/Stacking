@@ -6,7 +6,7 @@ export default function AuthShell({ title, subtitle, children, footer }) {
   return (
     <section className="au">
       <aside className="au__side">
-        <span className="au__logo"><img src={brand.logo} alt={brand.name} /></span>
+        {/* <span className="au__logo"><img src={brand.logo} alt={brand.name} /></span> */}
         <h2>Stake Smarter. <em>Grow Your Crypto.</em></h2>
         <p>Stake Solana, BNB and ZMAX with {brand.name} in a secure, transparent and user-friendly platform.</p>
         <ul>

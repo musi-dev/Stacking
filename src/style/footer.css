@@ -329,3 +329,75 @@
         grid-column: 1/-1
     }
 }
+
+/* =====================================================================
+   FOOTER — UPDATE
+   ===================================================================== */
+.sw-foot { padding-top: 44px; }
+
+/* trust strip */
+.sw-foot__trust {
+    max-width: var(--max);
+    margin: 0 auto 44px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.sw-foot__trust li {
+    display: flex; align-items: center; gap: .8rem;
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 16px;
+    padding: 14px 16px;
+}
+.sw-foot__trust li > span {
+    width: 40px; height: 40px; flex: none; border-radius: 12px;
+    background: rgba(232, 102, 28, .18); color: var(--accent);
+    display: grid; place-items: center; font-size: 1.1rem;
+}
+.sw-foot__trust b { display: block; color: #fff; font-size: .88rem; line-height: 1.25; }
+.sw-foot__trust small { color: #a9a9ad; font-size: .76rem; }
+
+/* grid: brand + 4 columns */
+.sw-foot__in { grid-template-columns: 1.7fr .8fr .8fr .9fr 1.1fr; }
+
+.sw-foot__logo {
+    display: inline-flex; align-items: center; gap: .6rem;
+    background: none; padding: 0; margin-bottom: 1rem;
+    color: #fff; font-weight: 800; letter-spacing: -.02em; font-size: 1.25rem;
+}
+.sw-foot__logo img {
+    height: 38px; width: 38px; border-radius: 10px; object-fit: cover; background: #fff;
+}
+.sw-foot__brand p { max-width: 320px; }
+.sw-foot__badges { display: none; }
+
+/* coin list */
+.sw-foot__coinlist { display: flex; flex-direction: column; gap: 8px; }
+.sw-foot__coinlist li a {
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 12px; padding: .5rem .8rem; font-size: .85rem;
+    transition: background .2s, border-color .2s;
+}
+.sw-foot__coinlist li a:hover { background: rgba(232, 102, 28, .16); border-color: var(--accent); }
+.sw-foot__coinlist li a::after { display: none; }
+.sw-foot__coinlist b { color: #fff; letter-spacing: .04em; }
+.sw-foot__coinlist span { color: var(--accent); font-size: .74rem; font-weight: 700; }
+
+.sw-foot__risk { background: rgba(0, 0, 0, .12); border-radius: 14px; padding: 14px 18px; border-top: 0; margin-top: 34px; }
+.sw-foot__risk strong { color: #e8e8ea; }
+.sw-foot__bar { padding-top: 6px; }
+
+@media (max-width: 1024px) {
+    .sw-foot__trust { grid-template-columns: repeat(2, 1fr); }
+    .sw-foot__in { grid-template-columns: repeat(3, 1fr); }
+    .sw-foot__brand { grid-column: 1 / -1; }
+    .sw-foot__brand p { max-width: 520px; }
+}
+@media (max-width: 520px) {
+    .sw-foot__trust { grid-template-columns: 1fr; }
+    .sw-foot__in { grid-template-columns: 1fr 1fr; gap: 28px 16px; }
+    .sw-foot__col:last-child { grid-column: 1 / -1; }
+}

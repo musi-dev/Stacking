@@ -551,3 +551,227 @@ section[class^="hm-"] {
         padding: 22px
     }
 }
+
+/* =====================================================================
+   HOME PAGE — LAYOUT UPDATE
+   ===================================================================== */
+
+.bw-lottie { width: 100%; }
+.bw-lottie svg { display: block; width: 100% !important; height: auto !important; }
+
+.hm-head--center { margin-left: auto; margin-right: auto; text-align: center; }
+
+/* ---- stats strip ---- */
+.hm-stats {
+    background: var(--card);
+    border-radius: var(--r);
+    padding: 30px 12px;
+    margin: 20px auto 0;
+    width: calc(100% - 40px);
+    gap: 0;
+}
+.hm-stats div {
+    padding: 4px 24px;
+    border-left: 1px solid var(--line);
+}
+.hm-stats div:first-child { border-left: 0; }
+.hm-stats b { color: var(--ink); }
+
+/* ---- intro with crypto animation ---- */
+.hm-intro {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+    padding: 90px 20px 50px;
+}
+.hm-intro__anim { position: relative; max-width: 460px; width: 100%; margin: 0 auto; }
+.hm-intro__glow {
+    position: absolute; inset: 8% 8%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232, 102, 28, .22), transparent 70%);
+    filter: blur(8px);
+}
+.hm-intro__anim .bw-lottie { position: relative; }
+.hm-intro__text {
+    font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+    font-weight: 500;
+    letter-spacing: -.01em;
+    max-width: 560px;
+    margin: 1rem 0 1.2rem;
+    line-height: 1.55;
+    color: var(--ink);
+}
+.hm-intro__pts { display: grid; gap: .6rem; margin-bottom: 1.6rem; }
+.hm-intro__pts li { display: flex; align-items: center; gap: .6rem; font-weight: 600; font-size: .94rem; }
+.hm-intro__pts svg { color: var(--accent); flex: none; }
+
+/* ---- about split ---- */
+.hm-split__media { position: relative; }
+.hm-split__media > img {
+    border-radius: var(--r);
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+.hm-split__badge {
+    position: absolute; left: -16px; bottom: 24px;
+    background: var(--dark); color: #fff;
+    border-radius: 18px; padding: 14px 20px;
+    display: flex; align-items: center; gap: .8rem;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, .18);
+}
+.hm-split__badge b { font-size: 2rem; letter-spacing: -.04em; line-height: 1; color: var(--accent); }
+.hm-split__badge span { font-size: .8rem; max-width: 90px; line-height: 1.25; color: #d6d6d8; }
+
+/* ---- why ---- */
+.hm-why__grid { grid-template-columns: repeat(4, 1fr); }
+.hm-why__item {
+    background: var(--card);
+    border-radius: var(--r);
+    padding: 12px 12px 22px;
+    transition: transform .25s, box-shadow .25s;
+}
+.hm-why__item:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(0, 0, 0, .08); }
+.hm-why__item > div { padding: 0 8px; }
+.hm-why__no {
+    display: inline-block; font-size: .74rem; font-weight: 800; letter-spacing: .08em;
+    color: var(--accent); margin-bottom: .3rem;
+}
+
+/* ---- coin of the day ---- */
+.hm-today__meta { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+.hm-today__meta span {
+    background: var(--paper); border-radius: 999px; padding: .35rem .9rem;
+    font-size: .82rem; color: var(--mute);
+}
+.hm-today__meta b { color: var(--accent); margin-left: .25rem; }
+
+/* ---- staking options spacing ---- */
+.hm-options { padding-bottom: 30px; }
+
+/* ---- business format ---- */
+.hm-biz {
+    background: var(--card);
+    border-radius: 28px;
+    padding: 48px;
+    margin: 40px auto;
+    width: calc(100% - 40px);
+}
+.hm-biz__top {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 36px;
+}
+.hm-biz__copy h2 { margin-bottom: 1rem; }
+.hm-biz__copy > p:not(.hm-kicker) { color: var(--mute); max-width: 520px; }
+.hm-biz__facts {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+    margin-top: 1.6rem; max-width: 520px;
+}
+.hm-biz__facts div {
+    background: var(--paper); border-radius: 16px; padding: 14px 18px;
+    display: flex; flex-direction: column;
+}
+.hm-biz__facts span { font-size: .78rem; color: var(--mute); }
+.hm-biz__facts b { font-size: 1.05rem; letter-spacing: -.02em; }
+.hm-biz__anim {
+    background: linear-gradient(160deg, #eefaf1, #e3f3e8);
+    border-radius: var(--r);
+    padding: 20px;
+    display: grid; place-items: center;
+}
+.hm-biz__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.hm-biz__card {
+    background: var(--paper);
+    border-radius: 20px;
+    padding: 24px;
+    transition: transform .25s, background .25s, color .25s;
+}
+.hm-biz__card:hover { transform: translateY(-4px); background: var(--dark); color: #fff; }
+.hm-biz__card:hover p { color: #c6c6ca; }
+.hm-biz__v {
+    display: block; font-size: clamp(1.9rem, 3vw, 2.5rem); letter-spacing: -.04em;
+    color: var(--accent); line-height: 1; margin-bottom: .9rem;
+}
+.hm-biz__card h3 { font-size: 1.05rem; margin-bottom: .4rem; }
+.hm-biz__card p { color: var(--mute); font-size: .88rem; transition: color .25s; }
+.hm-biz__foot {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    flex-wrap: wrap; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line);
+}
+.hm-biz__foot p { color: var(--mute); font-size: .86rem; max-width: 520px; }
+
+/* ---- community ---- */
+.hm-comm__item { position: relative; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.hm-comm__item:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(0, 0, 0, .08); }
+.hm-comm__item b { color: var(--accent); opacity: .35; }
+
+/* ---- steps ---- */
+.hm-steps__btn { background: #fff; color: var(--ink); margin-top: 1.4rem; }
+.hm-steps__btn:hover { background: var(--accent); color: #fff; }
+.hm-step { position: relative; }
+.hm-step__no {
+    width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: grid; place-items: center; font-weight: 800; font-size: .9rem; margin-bottom: .6rem;
+}
+
+/* ---- faq ---- */
+.hm-faq {
+    display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px;
+    padding: 60px 20px 20px; align-items: start;
+}
+.hm-faq__head > p:not(.hm-kicker) { color: var(--mute); margin: .8rem 0 1.4rem; max-width: 380px; }
+.hm-faq__list { display: grid; gap: 10px; }
+.hm-faq__item { background: var(--card); border-radius: 18px; overflow: hidden; }
+.hm-faq__item button {
+    width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    background: none; border: 0; cursor: pointer; font: inherit; font-weight: 700;
+    text-align: left; padding: 18px 22px; color: var(--ink);
+}
+.hm-faq__item button svg { flex: none; color: var(--accent); }
+.hm-faq__item p { padding: 0 22px 20px; color: var(--mute); font-size: .93rem; }
+.hm-faq__item.is-open { box-shadow: 0 12px 28px rgba(0, 0, 0, .06); }
+
+/* ---- closing CTA ---- */
+.hm-cta {
+    background: var(--dark); color: #fff;
+    border-radius: 28px; padding: 64px 24px;
+    margin: 50px auto 0; width: calc(100% - 40px);
+    position: relative; overflow: hidden;
+}
+.hm-cta::before {
+    content: ""; position: absolute; right: -90px; top: -90px; width: 300px; height: 300px;
+    border-radius: 50%; background: radial-gradient(circle, rgba(232, 102, 28, .35), transparent 70%);
+}
+.hm-cta > * { position: relative; }
+.hm-cta p { color: #c6c6ca; }
+.hm-cta__light { background: #fff; color: var(--ink); }
+.hm-cta__light:hover { background: var(--accent); color: #fff; }
+.hm-cta__line { border-color: #8f8f94; color: #fff; }
+.hm-cta__line:hover { border-color: #fff; }
+
+/* ---- responsive ---- */
+@media (max-width: 1024px) {
+    .hm-why__grid, .hm-biz__grid { grid-template-columns: repeat(2, 1fr); }
+    .hm-intro { gap: 32px; }
+    .hm-biz { padding: 36px; }
+}
+@media (max-width: 768px) {
+    .hm-intro, .hm-biz__top, .hm-faq { grid-template-columns: 1fr; }
+    .hm-intro { padding-top: 60px; }
+    .hm-stats div { border-left: 0; padding: 12px 16px; }
+    .hm-split__badge { left: 12px; }
+    .hm-split__media > img { height: 300px; }
+    .hm-biz { padding: 24px; border-radius: 22px; }
+    .hm-biz__anim { order: -1; }
+    .hm-faq { gap: 24px; }
+}
+@media (max-width: 520px) {
+    .hm-biz__grid, .hm-biz__facts { grid-template-columns: 1fr; }
+    .hm-biz { padding: 18px; }
+    .hm-cta { padding: 44px 18px; border-radius: 22px; }
+    .hm-faq__item button { padding: 16px; }
+}

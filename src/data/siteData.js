@@ -127,7 +127,7 @@ const caveat = "Predictions vary from one platform and analyst to another, so tr
 
 export const coins = [
   {
-    id: "sol", name: "Solana", symbol: "SOL", apy: "7.5%", img: img.chart,
+    id: "sol", name: "Solana", symbol: "SOL", apy: "7.5%", img: "/assets/s1.jpg",
     intro: "High-performance blockchain with great rewards.",
     days: "A fast proof-of-stake network known for low fees and quick confirmations.",
     forecastTitle: "SOL Coin Price Prediction 2030",
@@ -135,7 +135,7 @@ export const coins = [
     plans: buildPlans([100, 200, 300, 500, 1000], "SOL USDT", "USDT"),
   },
   {
-    id: "bnb", name: "BNB", symbol: "BNB", apy: "6.8%", img: img.btc,
+    id: "bnb", name: "BNB", symbol: "BNB", apy: "6.8%", img: "/assets/s4.jpg",
     intro: "Stake BNB and earn consistent rewards.",
     days: "The native asset of the BNB Chain ecosystem, used for fees, trading and staking.",
     forecastTitle: "BNB Coin Price Prediction 2030",
@@ -143,7 +143,7 @@ export const coins = [
     plans: buildPlans([100, 200, 300, 500, 1000], "BNB USDT", "USDT"),
   },
   {
-    id: "zmax", name: "ZMAX", symbol: "ZMAX", apy: "12.0%", img: img.coins,
+    id: "zmax", name: "ZMAX", symbol: "ZMAX", apy: "12.0%", img: "/assets/s3.jpg",
     intro: "Our native token with exclusive benefits.",
     days: "The ZOHOMAX ecosystem token with member-only staking benefits.",
     live: "0.010600",
@@ -172,3 +172,31 @@ export const faqs = [
   { q: "How are transactions made?", a: "BENWINK supports transactions through online mode through constant Trust wallet Applications." },
   { q: "How do I contact support?", a: "Our support is available through mail 24/7, and you can also use the contact details on this page." },
 ];
+
+// ---- Business format (shown on the home page below the staking assets) ----
+export const businessFormat = {
+  head: "Business format",
+  sub: "One clear plan structure across Solana, BNB and ZMAX.",
+  text: "Every BENWINK plan follows the same format, so you can see what you put in, what you earn each month and what you receive at maturity before you commit.",
+  items: [
+    { v: "10%", t: "Sponsorship income", d: "Earn a 10% sponsorship income when people you refer create accounts and stake." },
+    { v: "100%", t: "Return of capital", d: "Capital income plus for 730 days, returned in full under the plan terms." },
+    { v: "10 × 1%", t: "Level income", d: "A level income opportunity of 10 levels at 1% each, for 24 months." },
+    { v: "3%", t: "Monthly return", d: "A monthly return of 3% on every plan, paid as the monthly investment bonus." },
+  ],
+  facts: [
+    { l: "Plan period", v: "24 Months" },
+    { l: "Monthly bonus", v: "3%" },
+    { l: "Maturity amount", v: "2× your stake" },
+    { l: "Assets", v: "SOL · BNB · ZMAX" },
+  ],
+};
+
+export const footerLinks = {
+  resources: [
+    { to: "/blog", label: "Blog" },
+    { to: "/support", label: "Support" },
+    { to: "/support", label: "FAQs" },
+    { to: "/about", label: "About BENWINK" },
+  ],
+};
