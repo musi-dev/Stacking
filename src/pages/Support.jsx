@@ -30,7 +30,11 @@ export default function Support() {
             <p><FiMapPin /> {brand.address}</p>
             <p><FiGlobe /> {brand.website}</p>
             <p><FiHeadphones /> Support through mail, 24/7.</p>
-            {brand.email && <p><FiMail /> <a href={`mailto:${brand.email}`}>{brand.email}</a></p>}
+            {brand.emails?.map((m) => (
+              <p key={m.address}>
+                <FiMail /> {m.label}: <a href={`mailto:${m.address}`}>{m.address}</a>
+              </p>
+            ))}
           </Reveal>
           {/* FAQ animation below the address details */}
           <Reveal className="sp-anim" delay={160}>

@@ -138,7 +138,7 @@ export default function Home() {
       </section>
 
       {/* COIN OF THE DAY */}
-      <Reveal as="section" className="hm-today">
+      {/* <Reveal as="section" className="hm-today">
         <img src={today.img} alt={today.name} loading="lazy" />
         <div>
           <p className="hm-kicker">Coin of the day</p>
@@ -150,7 +150,7 @@ export default function Home() {
           </div>
           <Link to={`/markets/${today.id}`} className="bw-btn bw-btn--dark">Read more <FiArrowRight /></Link>
         </div>
-      </Reveal>
+      </Reveal> */}
 
       {/* STAKING OPTIONS (assets) */}
       <section className="hm-options">

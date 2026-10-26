@@ -24,11 +24,14 @@ export const brand = {
   tagline: "Stake Smarter. Grow Your Crypto.",
   address: "Edge Water Business Complex, Triq Elija Zammit, Giljan STJ 3120, Malta.",
   website: "www.benwink.com",
-  // Add the client's support mail here when supplied (e.g. "support@benwink.com").
-  // Footer and Support page show it automatically once filled in.
-  email: "",
+  // Primary mail (the Footer uses this one automatically)
+  email: "support@benwink.com",
+  // All contact mails, shown on the Support page
+  emails: [
+    { label: "Support", address: "support@benwink.com" },
+    { label: "General enquiries", address: "info@benwink.com" },
+  ],
 };
-
 export const navLinks = [
   { to: "/", label: "Home" },
   { to: "/markets", label: "Markets" },
@@ -113,7 +116,7 @@ export const involved = {
 export const why = [
   { t: "Secure & Reliable", d: "Secure and safe investments are made in BENWINK, with advanced security measures to protect your assets.", img: "/assets/pic1.jpg" },
   { t: "Transparent Rewards", d: "Real-time data and on-chain verification.", img: "/assets/pic2.png" },
-  { t: "Boundless Earning Scopes", d: "Invite as many people as you wish. The more people create accounts, the more payouts you receive.", img: "/assets/s5.png" },
+  { t: "Boundless Earning Scopes", d: "Invite as many people as you wish. The more people create accounts, the more payouts you receive.", img: "/assets/s6.png" },
   { t: "Resolute Support", d: "Our resolute support is accomplished to help you on your path to success. Support extends through mail 24/7.", img: "/assets/pic4.jpg" },
   { t: "Explore Innovative", d: "A complete analysis and innovative intelligence to help you accomplish your goals faster and easier with unique technology.", img: img.chart },
   { t: "Easy Management", d: "Simple and user-friendly platform for everyone.", img: img.team },
@@ -136,7 +139,7 @@ export const coins = [
     forecastTitle: "SOL Coin Price Prediction 2030",
     forecast: [caveat, "According to Changelly, SOL's average trading price could reach about $100 by 2030, with the platform suggesting a high of $2000."],
     plans: buildPlans([100, 200, 300, 500, 1000], "SOL USDT", "USDT"),
-    stats: [{ l: "APY up to", v: "7.5%" }, { l: "2030 average", v: "~$100" }, { l: "2030 high", v: "$2000" }],
+    stats: [{ l: "APY up to", v: "7.5%" }, { l: "2026 average", v: "~$100" }, { l: "2030 high", v: "$2000" }],
     points: [
       { t: "Fast network", d: "A proof-of-stake chain known for low fees and quick confirmations." },
       { t: "Staking rewards", d: "Stake SOL on BENWINK with APY up to 7.5% and a clear 24-month plan table." },
@@ -151,7 +154,7 @@ export const coins = [
     forecastTitle: "BNB Coin Price Prediction 2030",
     forecast: [caveat, "According to Changelly, BNB's average trading price could reach about $700 by 2030, with the platform suggesting a high of $5000."],
     plans: buildPlans([100, 200, 300, 500, 1000], "BNB USDT", "USDT"),
-    stats: [{ l: "APY up to", v: "6.8%" }, { l: "2030 average", v: "~$700" }, { l: "2030 high", v: "$5000" }],
+    stats: [{ l: "APY up to", v: "6.8%" }, { l: "2026 average", v: "~$700" }, { l: "2030 high", v: "$5000" }],
     points: [
       { t: "Ecosystem asset", d: "The native asset of the BNB Chain, used for fees, trading and staking." },
       { t: "Staking rewards", d: "Stake BNB on BENWINK with APY up to 6.8% and a clear 24-month plan table." },
@@ -160,14 +163,14 @@ export const coins = [
     ],
   },
   {
-    id: "zmax", kind: "crypto", name: "ZMAX", symbol: "ZMAX", apy: "12.0%", img: "/assets/s3.png",
+    id: "zmax", kind: "crypto", name: "ZMAX", symbol: "ZMAX", apy: "12.0%", img: "/assets/zohomax1.jpeg",
     intro: "Our native token with exclusive benefits.",
     days: "The ZOHOMAX ecosystem token with member-only staking benefits.",
     live: "0.010600",
     forecastTitle: "ZOHOMAX Coin Price Prediction 2030",
     forecast: [caveat, "According to Changelly, ZOHOMAX's average trading price could reach about $0.5 USDT by 2030, with the platform suggesting a high of $1.5."],
     plans: buildPlans([10000, 20000, 30000, 50000, 100000], "ZMAX COIN", "COIN"),
-    stats: [{ l: "Live price", v: "0.010600" }, { l: "2030 average", v: "~$0.5" }, { l: "2030 high", v: "$1.5" }],
+    stats: [{ l: "Live price", v: "0.010600" }, { l: "2030 average", v: "~$0.5" }, { l: "2035 high", v: "$1.5" }],
     points: [
       { t: "Our native token", d: "The ZOHOMAX ecosystem token with member-only staking benefits." },
       { t: "Staking rewards", d: "Stake ZMAX on BENWINK with APY up to 12.0% and a clear 24-month plan table." },
@@ -221,10 +224,10 @@ export const metals = [
 ];
 
 export const team = [
-  { name: "Team Member 1", role: "Founder", note: "Vision and platform strategy", img: "/assets/1.jpeg" },
-  { name: "Team Member 2", role: "Head of Staking", note: "Plans, assets and rewards", img: "/assets/2.jpeg" },
-  { name: "Team Member 3", role: "Technology Lead", note: "Security and platform build", img: "/assets/3.jpeg" },
-  { name: "Team Member 4", role: "Community Manager", note: "Support and referral program", img: "/assets/4.jpeg" },
+  { name: "Thomas Harvey", role: "Founder", note: "BENWINK NET Corporations", img: "/assets/1.jpeg" },
+  { name: "Our Crew", role: "Lead Game Designer", note: "Plans, assets and rewards", img: "/assets/2.jpeg" },
+  { name: "Esmond Urwin", role: "Technical Partner Lead", note: "Security and platform build", img: "/assets/3.jpeg" },
+  { name: "Mike Lee", role: "Blockchain Architect", note: "Support and referral program", img: "/assets/4.jpeg" },
 ];
 
 export const posts = [

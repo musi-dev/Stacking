@@ -96,6 +96,9 @@
     flex: none;
     margin-top: .25rem
 }
+
+.sp-contact a { color: inherit; text-decoration: underline; }
+
 /* ---- right column: address card + FAQ animation ---- */
 .sp-side { display: grid; gap: 20px; }
 .sp-anim {
